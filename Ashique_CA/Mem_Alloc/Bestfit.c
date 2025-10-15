@@ -76,6 +76,14 @@ int main() {
 
     Block *head = createBlocks(blockSize, m);
     bestFit(head, processSize, n);
+    
+    printf("\nRemaining space in blocks after allocation:\n");
+    Block *curr = head;
+    while (curr) {
+        printf("Block %d -> %d\n", curr->id, curr->size);
+        curr = curr->next;
+    }
+
     freeBlocks(head);
 
     return 0;
